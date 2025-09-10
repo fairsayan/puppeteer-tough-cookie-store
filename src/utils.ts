@@ -25,15 +25,17 @@ export const p2tSameSite = (sameSite?: Protocol.Network.CookieSameSite): SameSit
  * convert tough-cookie's sameSite to puppeteer's sameSite
  */
 export const t2pSameSite = (sameSite?: string): Protocol.Network.CookieSameSite => {
-    sameSite = sameSite ? sameSite.toLocaleLowerCase() : 'none'
-    switch (sameSite) {
+    if (!sameSite) return 'Lax'; // default behavior for compatibility
+    
+    switch (sameSite.toLowerCase()) {
         case 'lax':
             return 'Lax';
         case 'strict':
             return 'Strict';
         case 'none':
+            return 'None';
         default:
-            return 'Lax';
+            return 'Lax'; // fallback for unknown values
     }
 }
 
@@ -79,7 +81,7 @@ export const serializeForPuppeteer = (toughCookie: Cookie): Protocol.Network.Set
             PuppeteerInfinityExpires :
             toughCookie.expires.getTime(),
         secure: toughCookie.secure,
-        httpOnly: toughCookie.hostOnly === null ? undefined : toughCookie.hostOnly,
+        httpOnly: toughCookie.httpOnly,
         sameSite: t2pSameSite(toughCookie.sameSite),
     }
 

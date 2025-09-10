@@ -19,7 +19,7 @@
     "stripInternal": true,
     "types": ["node"],
     "strict": true,
-    "experimentalDecorators": true,
+  "experimentalDecorators": true
   },
   "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules", "dist", "./test/**/*.spec.ts"]
