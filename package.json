@@ -1,6 +1,6 @@
 {
   "name": "puppeteer-tough-cookie-store",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Puppeteer cookie store implementation for tough-cookie",
   "repository": "utyfua/puppeteer-tough-cookie-store",
   "typings": "dist/index.d.ts",
@@ -52,15 +52,15 @@
     "got": "^11.8.5",
     "jest": "^29.7.0",
     "puppeteer": "^24.2.1",
-    "rimraf": "^6.0.1",
-    "rollup": "^4.21.0",
-    "tslib": "^2.6.3",
     "typedoc": "0.27.7",
-    "typescript": "5.6.3",
     "@types/node": "^20.11.0"
   },
   "dependencies": {
     "tough-cookie": "^5.1.1",
-    "universalify": "^2.0.0"
+    "universalify": "^2.0.0",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.21.0",
+    "tslib": "^2.6.3",
+    "typescript": "5.6.3"
   }
 }
